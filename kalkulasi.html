@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Angsuran Mobil</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary py-3 fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-brand">
+          <a href="index.html" class="text-decoration-none">
+            <img src="assets/image/logo_black.png" alt="Logo" class="py-2" />
+          </a>
+        </div>
+
+        <div class="mx-auto position-absolute start-50 translate-middle-x">
+          <span class="navbar-text fs-4">Kalkulator Angsuran</span>
+        </div>
+
+        <!-- Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active px-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="#kalkulator">Kalkulator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="#tentang">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="#kontak">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div style="padding-top: 80px"></div>
+
+    <div class="container my-4" id="home">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="assets/image/innova.png"
+                  class="d-block w-100"
+                  alt="Toyota Innova"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="assets/image/civic.png"
+                  class="d-block w-100"
+                  alt="Toyota Civic"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="assets/image/fortuner.png"
+                  class="d-block w-100"
+                  alt="Toyota Fortuner"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-4" id="kalkulator">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header text-center">
+              <h2>Input Kalkulasi</h2>
+            </div>
+            <div class="card-body">
+              <form id="calculationForm">
+                <div class="row g-3 align-items-center mb-3">
+                  <div class="col-md-4">
+                    <label for="harga-mobil" class="col-form-label"
+                      >Harga Mobil (Rp)</label
+                    >
+                  </div>
+                  <div class="col-md-5">
+                    <input
+                      type="number"
+                      id="harga-mobil"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <span class="form-text">Tanpa titik/koma</span>
+                  </div>
+                </div>
+
+                <div class="row g-3 align-items-center mb-3">
+                  <div class="col-md-4">
+                    <label for="dpinpercent" class="col-form-label"
+                      >DP (Uang Muka)</label
+                    >
+                  </div>
+                  <div class="col-md-5">
+                    <input
+                      type="number"
+                      id="dpinpercent"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <span class="form-text">Dalam persen (%)</span>
+                  </div>
+                </div>
+
+                <div class="row g-3 align-items-center mb-3">
+                  <div class="col-md-4">
+                    <label for="tenor" class="col-form-label">Tenor</label>
+                  </div>
+                  <div class="col-md-5">
+                    <input
+                      type="number"
+                      id="tenor"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <span class="form-text">Dalam tahun</span>
+                  </div>
+                </div>
+
+                <div class="row g-3 align-items-center mb-3">
+                  <div class="col-md-4"></div>
+                  <div class="col-md-5 text-end">
+                    <button type="submit" class="btn btn-dark">
+                      Hitung Angsuran
+                    </button>
+                  </div>
+                  <div class="col-md-3"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="results-section" style="display: none">
+      <div class="d-flex justify-content-center">
+        <hr class="my-4" style="width: 50%" />
+      </div>
+
+      <div class="container my-4">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="text-center mb-4">
+              <h2>Hasil Perhitungan</h2>
+            </div>
+            <div>
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-4">
+                  <label class="col-form-label">Harga Mobil (Rp)</label>
+                </div>
+                <div class="col-md-5">
+                  <input
+                    type="text"
+                    id="hasil-harga"
+                    class="form-control"
+                    readonly
+                  />
+                </div>
+              </div>
+
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-4">
+                  <label class="col-form-label">DP (Uang Muka)</label>
+                </div>
+                <div class="col-md-5">
+                  <input
+                    type="text"
+                    id="hasil-dp"
+                    class="form-control"
+                    readonly
+                  />
+                </div>
+              </div>
+
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-4">
+                  <label class="col-form-label">Tenor</label>
+                </div>
+                <div class="col-md-5">
+                  <input
+                    type="text"
+                    id="hasil-tenor"
+                    class="form-control"
+                    readonly
+                  />
+                </div>
+              </div>
+
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-4">
+                  <label class="col-form-label">Bunga</label>
+                </div>
+                <div class="col-md-5">
+                  <input
+                    type="text"
+                    id="hasil-bunga"
+                    class="form-control"
+                    value="20%"
+                    readonly
+                  />
+                </div>
+              </div>
+
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-4">
+                  <label class="col-form-label">Jumlah Angsuran</label>
+                </div>
+                <div class="col-md-5">
+                  <input
+                    type="text"
+                    id="hasil-angsuran"
+                    class="form-control"
+                    readonly
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-5" id="tentang">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card shadow-sm">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-4">Tentang Perusahaan</h2>
+              <div class="row">
+                <div class="col-md-4 mb-4">
+                  <div class="text-center">
+                    <i class="fas fa-car fa-3x mb-3 text-primary"></i>
+                    <h5>Pilihan Terbaik</h5>
+                    <p>
+                      Berbagai pilihan mobil berkualitas untuk kebutuhan Anda
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div class="text-center">
+                    <i
+                      class="fas fa-hand-holding-dollar fa-3x mb-3 text-primary"
+                    ></i>
+                    <h5>Pembiayaan Flexible</h5>
+                    <p>
+                      Skema pembiayaan yang dapat disesuaikan dengan kemampuan
+                      Anda
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div class="text-center">
+                    <i class="fas fa-headset fa-3x mb-3 text-primary"></i>
+                    <h5>Layanan 24/7</h5>
+                    <p>Dukungan pelanggan selama 24 jam untuk membantu Anda</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-5" id="kontak">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card shadow-sm">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-4">Hubungi Kami</h2>
+              <div class="row">
+                <div class="col-md-4 mb-4">
+                  <div class="text-center">
+                    <i class="fas fa-location-dot fa-2x mb-3 text-primary"></i>
+                    <h5>Alamat</h5>
+                    <p>Jl. Candi Mendut Utara No.20<br />Malang, Jawa Timur</p>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div class="text-center">
+                    <i class="fas fa-phone fa-2x mb-3 text-primary"></i>
+                    <h5>Telepon</h5>
+                    <p>
+                      <a href="tel:081335364428" class="text-decoration-none"
+                        >081335364428</a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div class="text-center">
+                    <i class="fas fa-envelope fa-2x mb-3 text-primary"></i>
+                    <h5>Email</h5>
+                    <p>
+                      <a
+                        href="mailto:aptafarrel04@gmail.com"
+                        class="text-decoration-none"
+                        >aptafarrel04@gmail.com</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mt-4">
+                <div class="social-links">
+                  <a href="#" class="mx-2 text-decoration-none">
+                    <i class="fab fa-facebook fa-2x text-primary"></i>
+                  </a>
+                  <a href="#" class="mx-2 text-decoration-none">
+                    <i class="fab fa-instagram fa-2x text-primary"></i>
+                  </a>
+                  <a href="#" class="mx-2 text-decoration-none">
+                    <i class="fab fa-whatsapp fa-2x text-primary"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center mt-5 mb-4">
+      <p>&copy; 2024 Kalkulator Angsuran Mobil</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
